@@ -174,6 +174,36 @@ for ii in range(3, int(workbook.nsheets)):
             a.append(df.iat[i, 9])  # 车架号
             b.append(a)
             m.append_excel(df2, b, file_name_2)
+        elif var == '月结张国良':
+            # print('月结====临牌红旗', i - 1)
+            m = MakePandas()
+            df2 = pd.read_excel(file_name_1, header=None)
+            a = []
+            b = []
+            a.append(21)
+            a.append('临牌月结张国良')
+            a.append(df.iat[1, 1])  # 时间
+            a.append(df.iat[i, 3])  # 客户姓名
+            a.append(df.iat[i, 4])  # 车牌号
+            a.append(20)  # 金额
+            a.append(df.iat[i, 9])  # 车架号
+            b.append(a)
+            m.append_excel(df2, b, file_name_2)
+        elif var == '月结岳宏泰':
+            # print('月结====临牌红旗', i - 1)
+            m = MakePandas()
+            df2 = pd.read_excel(file_name_1, header=None)
+            a = []
+            b = []
+            a.append(22)
+            a.append('临牌月结岳宏泰')
+            a.append(df.iat[1, 1])  # 时间
+            a.append(df.iat[i, 3])  # 客户姓名
+            a.append(df.iat[i, 4])  # 车牌号
+            a.append(20)  # 金额
+            a.append(df.iat[i, 9])  # 车架号
+            b.append(a)
+            m.append_excel(df2, b, file_name_2)
         # 下面是用来判断上牌的语句
         elif var2 == '月结五菱':
             # print('上牌====月结五菱', i - 1)
@@ -315,7 +345,7 @@ for ii in range(3, int(workbook.nsheets)):
             # print('免费', table_time, var2, var, i + 2)
             with open(result_txt_name, 'a', encoding='utf8')as file:
                 file.write('免费' + str(table_time) + str(var2) + str(var) + str(i + 2) + '\n')
-        elif var2 == '月结红旗张' or var2 == '月结红旗潘':
+        elif var2 == '月结岳宏泰' or var2 == '月结张国良':
             # print('上牌====临牌月结红旗张潘', i - 1)
             m = MakePandas()
             df2 = pd.read_excel(file_name_1, header=None)
@@ -323,7 +353,7 @@ for ii in range(3, int(workbook.nsheets)):
             b = []
             if df.iat[i, 2] == '沪C':
                 a.append(14)
-                a.append('上牌月结红旗张潘')
+                a.append('上牌月结岳宏泰或张国良')
                 a.append(df.iat[1, 1])  # 时间
                 a.append(df.iat[i, 3])  # 客户姓名
                 a.append(df.iat[i, 4])  # 车牌号
@@ -333,7 +363,7 @@ for ii in range(3, int(workbook.nsheets)):
                 m.append_excel(df2, b, file_name_2)
             else:
                 a.append(14)
-                a.append('上牌月结红旗张潘')
+                a.append('上牌月结岳宏泰或张国良')
                 a.append(df.iat[1, 1])  # 时间
                 a.append(df.iat[i, 3])  # 客户姓名
                 a.append(df.iat[i, 4])  # 车牌号
@@ -370,36 +400,36 @@ for ii in range(3, int(workbook.nsheets)):
             a.append(df.iat[i, 9])  # 车架号
             b.append(a)
             m.append_excel(df2, b, file_name_2)
-        elif var2 == '月结岳宏泰':
-            # print('上牌====月结岳宏泰', i - 1)
-            m = MakePandas()
-            df2 = pd.read_excel(file_name_1, header=None)
-            a = []
-            b = []
-            a.append(17)
-            a.append('上牌月结岳宏泰')
-            a.append(df.iat[1, 1])  # 时间
-            a.append(df.iat[i, 3])  # 客户姓名
-            a.append(df.iat[i, 4])  # 车牌号
-            a.append(200)  # 金额
-            a.append(df.iat[i, 9])  # 车架号
-            b.append(a)
-            m.append_excel(df2, b, file_name_2)
-        elif var2 == '月结张国良':
-            # print('上牌====月结岳宏泰', i - 1)
-            m = MakePandas()
-            df2 = pd.read_excel(file_name_1, header=None)
-            a = []
-            b = []
-            a.append(18)
-            a.append('上牌月结张国良')
-            a.append(df.iat[1, 1])  # 时间
-            a.append(df.iat[i, 3])  # 客户姓名
-            a.append(df.iat[i, 4])  # 车牌号
-            a.append(200)  # 金额
-            a.append(df.iat[i, 9])  # 车架号
-            b.append(a)
-            m.append_excel(df2, b, file_name_2)
+        # elif var2 == '月结岳宏泰':
+        #     # print('上牌====月结岳宏泰', i - 1)
+        #     m = MakePandas()
+        #     df2 = pd.read_excel(file_name_1, header=None)
+        #     a = []
+        #     b = []
+        #     a.append(17)
+        #     a.append('上牌月结岳宏泰')
+        #     a.append(df.iat[1, 1])  # 时间
+        #     a.append(df.iat[i, 3])  # 客户姓名
+        #     a.append(df.iat[i, 4])  # 车牌号
+        #     a.append(200)  # 金额
+        #     a.append(df.iat[i, 9])  # 车架号
+        #     b.append(a)
+        #     m.append_excel(df2, b, file_name_2)
+        # elif var2 == '月结张国良':
+        #     # print('上牌====月结岳宏泰', i - 1)
+        #     m = MakePandas()
+        #     df2 = pd.read_excel(file_name_1, header=None)
+        #     a = []
+        #     b = []
+        #     a.append(18)
+        #     a.append('上牌月结张国良')
+        #     a.append(df.iat[1, 1])  # 时间
+        #     a.append(df.iat[i, 3])  # 客户姓名
+        #     a.append(df.iat[i, 4])  # 车牌号
+        #     a.append(200)  # 金额
+        #     a.append(df.iat[i, 9])  # 车架号
+        #     b.append(a)
+        #     m.append_excel(df2, b, file_name_2)
         elif var2 == '月结奔驰':
             # print('上牌====月结岳宏泰', i - 1)
             m = MakePandas()
